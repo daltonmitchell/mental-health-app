@@ -11,5 +11,29 @@
 </head>
 <body>
     <h1 id="newTitle">New Mood</h1>
+    <form id="new-form" action="/moods" method="POST">
+        <label>Mood:</label>
+        <select type="number" name="moodRating">
+            <option value="1">1</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+            <option value="4">4</option>
+            <option value="5">5</option>
+            <option value="6">6</option>
+            <option value="7">7</option>
+            <option value="8">8</option>
+            <option value="9">9</option>
+            <option value="10">10</option>
+        </select>
+        <label>What are you excited about today?</label>
+        <input type="text" name="excitements">
+        <label>What are you dreading today?</label>
+        <input type="text" name="dreads">
+        <label>Goals for today:</label>
+        <input type="text" name="goals">
+        <label>Journal:</label>
+        <textarea name="jounal"></textarea>
+        <input type="submit" value="Add Mood">
+      </form>
 </body>
 </html>

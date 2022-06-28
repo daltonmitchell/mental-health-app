@@ -1,3 +1,8 @@
 #homeTitle, #newTitle {
     text-align: center;
 }
+
+#new-form {
+    display: flex;
+    flex-direction: column;
+}
