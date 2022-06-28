@@ -16,6 +16,7 @@ require("./config/database");
 require("./config/passport");
 
 const indexRouter = require("./routes/index");
+const moodsRouter = require("./routes/moods");
 
 const app = express();
 
@@ -23,6 +24,7 @@ const app = express();
 app.set("views", path.join(__dirname, "views"));
 app.set("view engine", "ejs");
 
+// MIDDLEWARE
 app.use(logger("dev"));
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
@@ -55,7 +57,9 @@ app.use(function (req, res, next) {
     next();
 });
 
+// ROUTES
 app.use("/", indexRouter);
+app.use('/moods', moodsRouter);
 
 // catch 404 and forward to error handler
 app.use(function (req, res, next) {
