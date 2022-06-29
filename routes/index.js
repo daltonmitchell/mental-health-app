@@ -1,9 +1,12 @@
 const express = require('express');
 const router = express.Router();
 const passport = require('passport');
+const Mood = require('../models/mood');
 
 router.get('/', function(req, res, next) {
-  res.render('moods/index');
+  Mood.find({}, function(err, moods) {
+    res.render('moods/index', { moods });
+  });
 });
 
 // Google OAuth login route

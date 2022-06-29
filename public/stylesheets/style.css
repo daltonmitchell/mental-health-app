@@ -3,6 +3,24 @@
 }
 
 #new-form {
-    display: flex;
+    display: flexbox;
     flex-direction: column;
+}
+
+#subtitles {
+    margin-top: 50px;
+    display: flex;
+}
+
+#dateSub, #moodSub {
+    flex: 1;
+}
+
+#postDisplay {
+    margin-top: 50px;
+    display: flex;
+}
+
+#postDiv, #postDiv2 {
+    flex: 1;
 }

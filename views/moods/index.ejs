@@ -1,3 +1,15 @@
 <%- include("../partials/header")  %> 
     <h1 id="homeTitle">Mood Journal</h1>
+    <div id="subtitles">
+        <div id="dateSub">Date</div>
+        <div id="moodSub">Mood</div>
+        <div id="emptySub">Details</div>
+    </div>
+    <% moods.forEach(function(m) { %> 
+    <div id="postDisplay">
+        <div id="postDiv"><%= m.createdAt %></div>
+        <div id="postDiv2"><%= m.moodRating %></div>
+        <div id="postDiv3"><a href="/<%= m._id %>">DETAILS</a></div>
+    </div>
+    <% }); %> 
 <%- include("../partials/footer")  %> 
