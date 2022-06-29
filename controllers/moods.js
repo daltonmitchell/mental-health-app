@@ -1,8 +1,11 @@
 const Mood = require('../models/mood');
+const Reflection = require('../models/reflection');
 
 module.exports = {
     new: newMood,
     create,
+    show,
+    addReflection,
 };
 
 function newMood(req, res){
@@ -19,4 +22,20 @@ function create(req, res) {
             res.render('moods/index', { moods });
         });
     });
+}
+
+function show(req, res){
+    Mood.findById(req.params.id, function(err, mood){
+        res.render('moods/show', { mood });
+    });
+}
+
+function addReflection(req, res){
+    Mood.findById(req.params.id, function(err, mood){
+        req.body.newMood = parseInt(req.body.newMood);
+        let newReflection = new Reflection(req.body);
+        console.log(newReflection);
+        newReflection.save();
+        console.log(mood);
+    })
 }

@@ -1,0 +1,31 @@
+<%- include('../partials/header') %>
+
+<h1><%= mood.createdAt %></h1>
+<p>Mood: <%= mood.moodRating %></p>
+<p>Things I am looking forward to: <%= mood.excitements %></p>
+<p>Things I am dreading: <%= mood.dreads %></p>
+<p>Goals for the Day: <%= mood.goals %></p>
+<p>Journal: <%= mood.journal %></p>
+<br><br>
+<h3>Reflections:</h3>
+<h3>Add a Reflection:</h3>
+<form id="new-reflection-form" action="/moods/<%= mood._id %>/reflections" method="POST">
+    <label>Updated Mood:</label>
+    <select type="number" name="newMood">
+        <option value="1">1</option>
+        <option value="2">2</option>
+        <option value="3">3</option>
+        <option value="4">4</option>
+        <option value="5">5</option>
+        <option value="6">6</option>
+        <option value="7">7</option>
+        <option value="8">8</option>
+        <option value="9">9</option>
+        <option value="10">10</option>
+    </select>
+    <label>Reflection:</label>
+    <textarea name="recap"></textarea>
+    <input type="submit" value="Add Reflection">
+  </form>
+
+<%- include('../partials/footer') %> 

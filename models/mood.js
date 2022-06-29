@@ -18,7 +18,8 @@ const moodSchema = new mongoose.Schema({
     },
     journal: {
         type: String
-    }
+    },
+    reflection: [{type: Schema.Types.ObjectId, ref: 'Reflection'}]
 }, {
     timestamps: true
 });
