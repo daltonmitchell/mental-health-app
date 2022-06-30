@@ -8,6 +8,7 @@ module.exports = {
     addReflection,
     edit,
     update,
+    delete: deleteMood,
 };
 
 function newMood(req, res){
@@ -56,5 +57,11 @@ function update(req, res){
         if(err) console.log(err);
         console.log(mood);
         res.redirect(`/moods/${mood._id}`)
+    });
+}
+
+function deleteMood(req, res){
+    Mood.findOneAndDelete({_id: req.params.id}, function(err, mood){
+        res.redirect('/');
     });
 }

@@ -1,13 +1,14 @@
 const express = require('express');
 const router = express.Router();
 const moodsCtrl = require('../controllers/moods');
+const isLoggedIn = require('../config/auth');
 
-router.get('/new', moodsCtrl.new);
-router.post('/', moodsCtrl.create);
-router.get('/:id', moodsCtrl.show);
-router.post('/:id/reflections', moodsCtrl.addReflection);
-router.get('/:id/edit', moodsCtrl.edit);
-router.put('/:id', moodsCtrl.update);
-router.delete('/', moodsCtrl.delete);
+router.get('/new', isLoggedIn, moodsCtrl.new);
+router.post('/', isLoggedIn, moodsCtrl.create);
+router.get('/:id', isLoggedIn, moodsCtrl.show);
+router.post('/:id/reflections', isLoggedIn, moodsCtrl.addReflection);
+router.get('/:id/edit', isLoggedIn, moodsCtrl.edit);
+router.put('/:id', isLoggedIn, moodsCtrl.update);
+router.delete('/:id', isLoggedIn, moodsCtrl.delete);
 
 module.exports = router;
