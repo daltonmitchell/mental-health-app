@@ -9,6 +9,12 @@
 <a href="/moods/<%= mood._id %>/edit">Update Mood</a>
 <br><br>
 <h3>Reflections:</h3>
+<% if (mood.reflection) { %>
+  <ul>
+    <li>Mood: <%= mood.reflection.newMood %></li>
+    <li><%= mood.reflection.recap %></li>
+  </ul>
+<% } %>
 <h3>Add a Reflection:</h3>
 <form id="new-reflection-form" action="/moods/<%= mood._id %>/reflections" method="POST">
     <label>Updated Mood:</label>
@@ -25,12 +31,6 @@
         <option value="10">10</option>
     </select>
     <label>Reflection:</label>
-    <% if (mood.reflection) { %>
-      <ul>
-        <li>Mood: <%= mood.reflection.newMood %></li>
-        <li><%= mood.reflection.recap %></li>
-      </ul>
-    <% } %>
     <textarea name="recap"></textarea>
     <input type="submit" value="Add Reflection">
   </form>

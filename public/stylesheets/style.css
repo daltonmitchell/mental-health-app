@@ -3,7 +3,12 @@
 }
 
 #new-form {
-    display: flexbox;
+    display: flex;
+    flex-direction: column;
+}
+
+#new-reflection-form {
+    display: flex;
     flex-direction: column;
 }
 
@@ -23,4 +28,17 @@
 
 #postDiv, #postDiv2 {
     flex: 1;
+}
+
+#postDiv2 {
+    margin-left: 75px;
+}
+
+#navbarInner {
+    margin-left: 275px;
+}
+
+#noUser {
+    text-align: center;
+    margin-top: 100px;
 }
