@@ -11,4 +11,4 @@ TRELLO BOARD: https://trello.com/b/UlJej47N/project-2
 
 ERD: https://lucid.app/lucidchart/a6869715-c8ff-422b-be50-c939c2a65998/edit?beaconFlowId=804B13EA03E922CF&invitationId=inv_763d526e-9966-4245-98f9-8e1cdfec2daf&page=0_0#
 
-![erd](https://i.imgur.com/235KSs4.png)
+![erd](https://i.imgur.com/wCbVUrB.png)
