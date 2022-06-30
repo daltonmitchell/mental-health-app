@@ -1,0 +1,31 @@
+<%- include("../partials/header")  %> 
+
+<body>
+    <h1 id="newTitle">Update Mood</h1>
+    <form id="new-form" action="/moods/<%= mood._id %>?_method=PUT" method="POST">
+        <label>Mood:</label>
+        <select type="number" name="moodRating" selected="<%= mood.moodRating %>">
+            <option value="1">1</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+            <option value="4">4</option>
+            <option value="5">5</option>
+            <option value="6">6</option>
+            <option value="7">7</option>
+            <option value="8">8</option>
+            <option value="9">9</option>
+            <option value="10">10</option>
+        </select>
+        <label>What are you excited about today?</label>
+        <input type="text" name="excitements" value="<%= mood.excitements %>">
+        <label>What are you dreading today?</label>
+        <input type="text" name="dreads" value="<%= mood.dreads %>">
+        <label>Goals for today:</label>
+        <input type="text" name="goals" value="<%= mood.goals %>">
+        <label>Journal:</label>
+        <textarea name="journal"><%= mood.journal %></textarea>
+        <input type="submit" value="Update Mood">
+      </form>
+</body>
+
+<%- include('../partials/footer') %> 

@@ -6,6 +6,7 @@
 <p>Things I am dreading: <%= mood.dreads %></p>
 <p>Goals for the Day: <%= mood.goals %></p>
 <p>Journal: <%= mood.journal %></p>
+<a href="/moods/<%= mood._id %>/edit">Update Mood</a>
 <br><br>
 <h3>Reflections:</h3>
 <h3>Add a Reflection:</h3>
@@ -24,6 +25,12 @@
         <option value="10">10</option>
     </select>
     <label>Reflection:</label>
+    <% if (mood.reflection) { %>
+      <ul>
+        <li><%= mood.reflection.newMood %></li>
+        <li><%= mood.reflection.recap %></li>
+      </ul>
+    <% } %>
     <textarea name="recap"></textarea>
     <input type="submit" value="Add Reflection">
   </form>

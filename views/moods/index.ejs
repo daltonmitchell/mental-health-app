@@ -9,7 +9,7 @@
     <div id="postDisplay">
         <div id="postDiv"><%= m.createdAt %></div>
         <div id="postDiv2"><%= m.moodRating %></div>
-        <div id="postDiv3"><a href="/moods/<%= m._id %>">DETAILS</a></div>
+        <div id="postDiv3"><a href="/moods/<%= m._id %>">DETAILS</a><button method="DELETE" action="/">X</button></div>
     </div>
     <% }); %> 
 <%- include("../partials/footer")  %> 

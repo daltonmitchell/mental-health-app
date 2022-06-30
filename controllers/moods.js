@@ -6,6 +6,8 @@ module.exports = {
     create,
     show,
     addReflection,
+    edit,
+    update,
 };
 
 function newMood(req, res){
@@ -25,8 +27,9 @@ function create(req, res) {
 }
 
 function show(req, res){
-    Mood.findById(req.params.id, function(err, mood){
-        res.render('moods/show', { mood });
+    Mood.findById(req.params.id).populate('reflection').exec(function(err, mood){
+            console.log(mood);
+            res.render('moods/show', { mood })
     });
 }
 
@@ -34,8 +37,24 @@ function addReflection(req, res){
     Mood.findById(req.params.id, function(err, mood){
         req.body.newMood = parseInt(req.body.newMood);
         let newReflection = new Reflection(req.body);
-        console.log(newReflection);
         newReflection.save();
+        mood.reflection = newReflection._id;
+        mood.save();
+        res.redirect(`/moods/${mood._id}`);
+    });
+}
+
+function edit(req, res){
+    Mood.findById(req.params.id, function(err, mood){
+        res.render('moods/edit', { mood });
+    });
+}
+
+function update(req, res){
+    req.body.moodRating = parseInt(req.body.moodRating);
+    Mood.findByIdAndUpdate(req.params.id, req.body, function(err, mood){
+        if(err) console.log(err);
         console.log(mood);
-    })
+        res.redirect(`/moods/${mood._id}`)
+    });
 }
