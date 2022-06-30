@@ -5,7 +5,7 @@ Mood Journal is an application used to make journal entries that track your mood
 # Technologies Used: 
 HTML, CSS, Javascript, Bootstraps, Mongoose, MongoDB, Express, Node.js. 
 
-# Deploy Application: 
+# Deployed Application: 
 https://mood-journal-project.herokuapp.com/
 
 # WIREFRAME: 
