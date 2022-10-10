@@ -30,4 +30,5 @@ https://lucid.app/lucidchart/a6869715-c8ff-422b-be50-c939c2a65998/edit?beaconFlo
 * AAU I want to see the time of each reflection's submission.
 * AAU I want to be able to add MULTIPLE reflection's that are ordered by the time of submission.
 * AAU I want to see ONLY the posts the I make.
+* Styling.
 
